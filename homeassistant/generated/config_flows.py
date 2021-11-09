@@ -450,6 +450,7 @@ FLOWS = {
         "uptime",
         "uptimerobot",
         "vallox",
+        "vconnex",
         "velbus",
         "venstar",
         "vera",

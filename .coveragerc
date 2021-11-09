@@ -1426,6 +1426,10 @@ omit =
     homeassistant/components/upnp/device.py
     homeassistant/components/upnp/sensor.py
     homeassistant/components/vasttrafik/sensor.py
+    homeassistant/components/vconnex/__init__.py
+    homeassistant/components/vconnex/entity.py
+    homeassistant/components/vconnex/switch.py
+    homeassistant/components/vconnex/vconnex_wrap.py
     homeassistant/components/velbus/__init__.py
     homeassistant/components/velbus/binary_sensor.py
     homeassistant/components/velbus/button.py

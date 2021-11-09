@@ -1,0 +1,13 @@
+{
+  "domain": "vconnex",
+  "name": "Vconnex",
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/integrations/vconnex",
+  "requirements": ["vconnex.py==1.0.6"],
+  "ssdp": [],
+  "zeroconf": [],
+  "homekit": {},
+  "dependencies": [],
+  "codeowners": ["@vconnex", "@hiep2902"],
+  "iot_class": "cloud_push"
+}
