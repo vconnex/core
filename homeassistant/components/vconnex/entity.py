@@ -14,13 +14,13 @@ from .const import DOMAIN, DOMAIN_NAME, CommandName, DispatcherSignal
 
 LOGGER = logging.getLogger(__name__)
 
-EntityDescType = TypeVar("EntityDescType", bound=EntityDescription)
+EntityDescT = TypeVar("EntityDescT", bound=EntityDescription)
 
 
-class EntityDescResolver(Generic[EntityDescType]):
+class EntityDescResolver(Generic[EntityDescT]):
     """Entity Description Resolver."""
 
-    def __init__(self, class_type: type[EntityDescType]) -> None:
+    def __init__(self, class_type: type[EntityDescT]) -> None:
         """Create Entity Description Resolver object."""
         self.__cls = class_type
         self._additional_param_value: dict = {}
@@ -68,7 +68,7 @@ class EntityDescResolver(Generic[EntityDescType]):
 
     def from_param(
         self, param_dict: dict, device: VconnexDevice = None
-    ) -> EntityDescType | None:
+    ) -> EntityDescT | None:
         """Get Entity Description from param dict."""
         new_param_dict = self._process_param(param_dict, device)
         if new_param_dict is not None:
@@ -77,7 +77,7 @@ class EntityDescResolver(Generic[EntityDescType]):
 
     @staticmethod
     def of(  # pylint: disable=invalid-name
-        cls_type: type[EntityDescType],
+        cls_type: type[EntityDescT],
     ) -> EntityDescResolver:
         """Create Entity Description Resolver instance."""
         return EntityDescResolver(cls_type)
