@@ -8,7 +8,7 @@ from typing import Any
 from vconnex.device import VconnexDevice, VconnexDeviceManager
 
 from homeassistant.components.switch import (
-    DEVICE_CLASS_SWITCH,
+    SwitchDeviceClass,
     SwitchEntity,
     SwitchEntityDescription,
 )
@@ -28,7 +28,7 @@ DEVICE_TYPE_SET = {3010, 3011, 3012, 3015, 3016, 3017, 3018, 3043}
 DEVICE_PARAM_TYPE_SET = {ParamType.ON_OFF}
 ENTITY_DESC_RESOLVER = EntityDescResolver.of(
     SwitchEntityDescription
-).with_additional_param_value({"device_class": DEVICE_CLASS_SWITCH})
+).with_additional_param_value({"device_class": SwitchDeviceClass.SWITCH.value})
 
 ENTITY_DESC_LIST_RESOLVER_LIST = [
     EntityDescListResolver(DEVICE_TYPE_SET, DEVICE_PARAM_TYPE_SET, ENTITY_DESC_RESOLVER)
